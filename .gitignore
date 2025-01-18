@@ -13,3 +13,4 @@
 .externalNativeBuild
 .cxx
 local.properties
+/app/src/main/java/com/example/mobile_assigment2/adapter/StudentsRecyclerAdapter.kt

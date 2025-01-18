@@ -1,6 +1,5 @@
 package com.example.mobile_assigment2
 
-import android.view.LayoutInflater
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -12,9 +11,9 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mobile_assigment2.adapter.StudentsRecyclerAdapter
 import com.example.mobile_assigment2.model.Model
 import com.example.mobile_assigment2.model.Student
-import android.view.ViewGroup
 
 interface OnItemClickListener {
     fun onItemClick(position: Int)
@@ -60,7 +59,7 @@ class StudentsRecyclerViewActivity : AppCompatActivity() {
     class StudentViewHolder(
         itemView: View,
         listener: OnItemClickListener?
-    ): RecyclerView.ViewHolder(itemView) {
+    ) : RecyclerView.ViewHolder(itemView) {
 
         private var nameTextView: TextView? = null
         private var idTextView: TextView? = null
@@ -95,29 +94,6 @@ class StudentsRecyclerViewActivity : AppCompatActivity() {
                 isChecked = student?.isChecked ?: false
                 tag = position
             }
-        }
-    }
-
-    class StudentsRecyclerAdapter(private val students: MutableList<Student>?): RecyclerView.Adapter<StudentViewHolder>() {
-
-        var listener: OnItemClickListener? = null
-
-        override fun getItemCount(): Int = students?.size ?: 0
-
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StudentViewHolder {
-            val itemView = LayoutInflater.from(parent.context).inflate(
-                R.layout.student_list_row,
-                parent,
-                false
-            )
-            return StudentViewHolder(itemView, listener)
-        }
-
-        override fun onBindViewHolder(holder: StudentViewHolder, position: Int) {
-            holder.bind(
-                student = students?.get(position),
-                position = position
-            )
         }
     }
 }

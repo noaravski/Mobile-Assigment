@@ -13,9 +13,7 @@ class StudentsAdapter(private val students: MutableList<Student>?): BaseAdapter(
 
     override fun getCount(): Int = students?.size ?: 0
 
-    override fun getItem(position: Int): Any {
-        TODO("Not yet implemented")
-    }
+    override fun getItem(position: Int): Any? = students?.get(position)
 
     override fun getItemId(position: Int): Long  = 0
 
