@@ -1,6 +1,8 @@
 package com.example.mobile_assigment2
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -26,6 +28,17 @@ class StudentDetailActivity : AppCompatActivity() {
             studentNameTextView.text = it.name
             studentIdTextView.text = it.id
             studentIsCheckedTextView.text = it.isChecked.toString()
+        }
+
+        val editButton = findViewById<ImageButton>(R.id.EditButton)
+
+        val index = intent.getIntExtra("student_index", -1)
+        editButton.setOnClickListener {
+            val intent = Intent(this, EditProfileActivity::class.java).apply {
+                putExtra("student_index", index)
+            }
+            startActivity(intent)
+
         }
     }
 }

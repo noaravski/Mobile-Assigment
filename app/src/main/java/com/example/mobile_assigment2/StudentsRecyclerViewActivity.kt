@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.CheckBox
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -35,6 +36,13 @@ class StudentsRecyclerViewActivity : AppCompatActivity() {
             insets
         }
 
+        val addStudentButton: ImageButton =
+            findViewById(R.id.students_recycler_activity_add_student_button)
+        addStudentButton.setOnClickListener {
+            val intent = Intent(this, AddStudentActivity::class.java)
+            startActivity(intent)
+        }
+        
         students = Model.shared.students
         val recyclerView: RecyclerView = findViewById(R.id.students_recycler_view)
         recyclerView.setHasFixedSize(true)
@@ -50,6 +58,7 @@ class StudentsRecyclerViewActivity : AppCompatActivity() {
                 val selectedStudent = students?.get(position)
                 val intent = Intent(this@StudentsRecyclerViewActivity, StudentDetailActivity::class.java)
                 intent.putExtra("student", selectedStudent)
+                intent.putExtra("student_index", position)
                 startActivity(intent)
             }
 
