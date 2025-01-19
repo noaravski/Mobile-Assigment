@@ -1,5 +1,6 @@
 package com.example.mobile_assigment2
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -46,6 +47,10 @@ class StudentsRecyclerViewActivity : AppCompatActivity() {
         adapter.listener = object : OnItemClickListener {
             override fun onItemClick(position: Int) {
                 Log.d("TAG", "On click Activity listener on position $position")
+                val selectedStudent = students?.get(position)
+                val intent = Intent(this@StudentsRecyclerViewActivity, StudentDetailActivity::class.java)
+                intent.putExtra("student", selectedStudent)
+                startActivity(intent)
             }
 
             override fun onItemClick(student: Student?) {
