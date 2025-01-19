@@ -14,8 +14,6 @@ import androidx.core.view.WindowInsetsCompat
 class StudentsListViewActivity : AppCompatActivity() {
 
     var students: MutableList<Student>? = null
-    private lateinit var adapter: StudentsAdapter
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

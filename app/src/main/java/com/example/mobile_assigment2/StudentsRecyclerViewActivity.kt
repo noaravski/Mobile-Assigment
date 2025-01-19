@@ -42,8 +42,7 @@ class StudentsRecyclerViewActivity : AppCompatActivity() {
             val intent = Intent(this, AddStudentActivity::class.java)
             startActivity(intent)
         }
-
-
+        
         students = Model.shared.students
         val recyclerView: RecyclerView = findViewById(R.id.students_recycler_view)
         recyclerView.setHasFixedSize(true)
