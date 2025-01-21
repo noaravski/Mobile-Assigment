@@ -40,5 +40,13 @@ class StudentDetailActivity : AppCompatActivity() {
             startActivity(intent)
 
         }
+
+        val cancelButton = findViewById<ImageButton>(R.id.cancelButtonShowDetails)
+
+        cancelButton.setOnClickListener {
+
+            val intent = Intent(this, StudentsRecyclerViewActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
