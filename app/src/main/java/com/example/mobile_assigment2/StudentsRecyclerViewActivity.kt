@@ -55,6 +55,11 @@ class StudentsRecyclerViewActivity : AppCompatActivity() {
         adapter.listener = object : OnItemClickListener {
             override fun onItemClick(position: Int) {
                 Log.d("TAG", "On click Activity listener on position $position")
+                val selectedStudent = students?.get(position)
+                val intent = Intent(this@StudentsRecyclerViewActivity, StudentDetailActivity::class.java)
+                intent.putExtra("student", selectedStudent)
+                intent.putExtra("student_index", position)
+                startActivity(intent)
             }
 
             override fun onItemClick(student: Student?) {

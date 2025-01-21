@@ -11,8 +11,8 @@ class Model private constructor() {
     init {
         for (i in 0..5) {
             val student = Student(
-                name = "Name: $i",
-                id = "Student ID: $i",
+                name = "name$i",
+                id = "$i",
                 avatarUrl = "",
                 isChecked = false
             )

@@ -38,8 +38,8 @@ class AddStudentActivity : AppCompatActivity() {
 
         saveButton?.setOnClickListener {
             val student = Student(
-                name = "Name: " + nameTextField?.text.toString(),
-                id = "Student ID: " + idTextField?.text.toString(),
+                name = nameTextField?.text.toString(),
+                id = idTextField?.text.toString(),
                 avatarUrl = "",
                 isChecked = false
             )

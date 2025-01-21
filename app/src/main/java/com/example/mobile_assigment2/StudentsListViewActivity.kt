@@ -1,5 +1,6 @@
 package com.example.mobile_assigment2
 
+import android.content.Intent
 import com.example.mobile_assigment2.adapter.StudentsAdapter
 import android.os.Bundle
 import android.util.Log
@@ -31,6 +32,7 @@ class StudentsListViewActivity : AppCompatActivity() {
 
         listView.setOnItemClickListener { parent, view, position, id ->
             Log.d("TAG", "A new row click on cell index: $position")
+
         }
     }
 }
